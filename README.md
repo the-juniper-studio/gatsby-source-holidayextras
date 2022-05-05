@@ -8,10 +8,8 @@
   </a>
 </p>
 <h1 align="center">
-  Starter for a Gatsby Plugin
+  Gatsby Source Holiday Extras
 </h1>
-
-A minimal boilerplate for the essential files Gatsby looks for in a plugin.
 
 ## What does this plugin do?
 

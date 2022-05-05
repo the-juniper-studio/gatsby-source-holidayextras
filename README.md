@@ -2,6 +2,10 @@
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
+  +
+  <a href="https://www.holidayextras.com">
+  <img alt="Holiday Extras" src="https://dmy0b9oeprz0f.cloudfront.net/holidayextras.co.uk/brand-guidelines/logo-tags/svg/robot-2.svg" width="60px">
+  </a>
 </p>
 <h1 align="center">
   Starter for a Gatsby Plugin
@@ -9,105 +13,75 @@
 
 A minimal boilerplate for the essential files Gatsby looks for in a plugin.
 
+## What does this plugin do?
+
+This plugin queries Information from Holiday Extras Product Library.
+Details of the API can be found by visiting the [Holiday Extras API Docs](https://docs.holidayextras.co.uk/hxapi/productlibrary/)
+
+## Why should you use it?
+
+This Service is great for generating information about products and services Holiday Extras provides. You can use this data to generate your own informational pages using Gatsby. We recommend using this service with your own content for SEO.
+
 ## 🚀 Quick start
 
-To get started creating a new plugin, you can follow these steps:
+```shell
+npm install gatsby-source-holidayextras
+```
 
-1. Initialize a new plugin from the starter with `gatsby new`
+## Add environment variables
+
+Environment variables allow you to safely store sensitive information about your projects, like your API Key or Access Tokem. At the root of your project, create two files:
+
+.env.development
+.env.production
+
+Then, add the variables on each file to match your HX API information.
+HX_API_KEY
+HX_API_TOKEN
+
+## Configure the plugin
+
+Define the plugin configuration in the `gatsby-config.js` file. The following gives a basic example of the plugin.
 
 ```shell
-gatsby new my-plugin https://github.com/gatsbyjs/gatsby-starter-plugin
-```
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
-If you already have a Gatsby site, you can use it. Otherwise, you can [create a new Gatsby site](https://www.gatsbyjs.com/tutorial/part-0/#create-a-gatsby-site) to test your plugin.
-
-Your directory structure will look similar to this:
-
-```text
-/my-gatsby-site
-├── gatsby-config.js
-└── /src
-    └── /pages
-        └── /index.js
-/my-plugin
-├── gatsby-browser.js
-├── gatsby-node.js
-├── gatsby-ssr.js
-├── index.js
-├── package.json
-└── README.md
-```
-
-With `my-gatsby-site` being your Gatsby site, and `my-plugin` being your plugin. You could also include the plugin in your [site's `plugins` folder](https://www.gatsbyjs.com/docs/loading-plugins-from-your-local-plugins-folder/).
-
-2. Include the plugin in a Gatsby site
-
-Inside of the `gatsby-config.js` file of your site (in this case, `my-gatsby-site`), include the plugin in the `plugins` array:
-
-```javascript
 module.exports = {
   plugins: [
-    // other gatsby plugins
     // ...
-    require.resolve(`../my-plugin`)
+    {
+      resolve: gatsby-source-holidayextras,
+      options: {
+        products: [array of HX product codes]
+        key: process.env.HX_API_KEY,
+        token: process.env.HX_API_TOKEN`
+      }
+    },
   ]
 }
 ```
 
-The line `require.resolve('../my-plugin')` is what accesses the plugin based on its filepath on your computer, and adds it as a plugin when Gatsby runs.
+Running this in your project will return the following basic values for Parking, and Hotel products only:
 
-_You can use this method to test and develop your plugin before you publish it to a package registry like npm. Once published, you would instead install it and [add the plugin name to the array](https://www.gatsbyjs.com/docs/using-a-plugin-in-your-site/). You can read about other ways to connect your plugin to your site including using `npm link` or `yarn workspaces` in the [doc on creating local plugins](https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project)._
-
-3. Verify the plugin was added correctly
-
-The plugin added by the starter implements a single Gatsby API in the `gatsby-node` that logs a message to the console. When you run `gatsby develop` or `gatsby build` in the site that implements your plugin, you should see this message.
-
-You can verify your plugin was added to your site correctly by running `gatsby develop` for the site.
-
-You should now see a message logged to the console in the preinit phase of the Gatsby build process:
-
-```shell
-$ gatsby develop
-success open and validate gatsby-configs - 0.033s
-success load plugins - 0.074s
-Loaded gatsby-starter-plugin
-success onPreInit - 0.016s
-...
+```
+address
+airport
+latitude
+logo
+longitude
+name
+productCode
+type
 ```
 
-4. Rename the plugin in the `package.json`
+## How to Contribute
 
-When you clone the site, the information in the `package.json` will need to be updated. Name your plugin based off of [Gatsby's conventions for naming plugins](https://www.gatsbyjs.com/docs/naming-a-plugin/).
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have your help.
 
-## 🧐 What's inside?
+Asking a question or reporting a bug: please feel free to open an [issue](https://github.com/the-juniper-studio/gatsby-source-holidayextras/issues).
 
-This starter generates the [files Gatsby looks for in plugins](https://www.gatsbyjs.com/docs/files-gatsby-looks-for-in-a-plugin/).
+Suggesting an improvement: Open an issue explaining your improvement or feature so we can discuss and learn more. Please also check [our roadmap](roadmap) to see what ideas for improvements we already have
 
-```text
-/my-plugin
-├── .gitignore
-├── gatsby-browser.js
-├── gatsby-node.js
-├── gatsby-ssr.js
-├── index.js
-├── LICENSE
-├── package.json
-└── README.md
-```
-
-- **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-- **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-- **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-- **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-- **`index.js`**: A file that will be loaded by default when the plugin is [required by another application](https://docs.npmjs.com/creating-node-js-modules#create-the-file-that-will-be-loaded-when-your-module-is-required-by-another-application0). You can adjust what file is used by updating the `main` field of the `package.json`.
-- **`LICENSE`**: This plugin starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-- **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the plugin's name, author, etc). This manifest is how npm knows which packages to install for your project.
-- **`README.md`**: A text file containing useful reference information about your plugin.
-
-## 🎓 Learning Gatsby
-
-If you're looking for more guidance on plugins, how they work, or what their role is in the Gatsby ecosystem, check out some of these resources:
-
-- The [Creating Plugins](https://www.gatsbyjs.com/docs/creating-plugins/) section of the docs has information on authoring and maintaining plugins yourself.
-- The conceptual guide on [Plugins, Themes, and Starters](https://www.gatsbyjs.com/docs/plugins-themes-and-starters/) compares and contrasts plugins with other pieces of the Gatsby ecosystem. It can also help you [decide what to choose between a plugin, starter, or theme](https://www.gatsbyjs.com/docs/plugins-themes-and-starters/#deciding-which-to-use).
-- The [Gatsby plugin library](https://www.gatsbyjs.com/plugins/) has over 1750 official as well as community developed plugins that can get you up and running faster and borrow ideas from.
+Submitting code changes: For small fixes, feel free to open a PR with a description of your changes. For large changes, please first open an issue so we can discuss if and how the changes should be implemented.

@@ -1,13 +1,13 @@
 {
   "name": "gatsby-source-holidayextras",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fetch product information from Holiday Extras Product Library API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"No build script setup\""
   },
-  "Dependencies": {
+  "dependencies": {
     "node-fetch": "^2.6.5"
   },
   "devDependencies": {
@@ -18,5 +18,6 @@
     "gatsby-plugin"
   ],
   "author": "The Juniper Studio <hello@thejuniperstudio.com>",
-  "license": "0BSD"
+  "license": "0BSD",
+  "bugs": "https://github.com/the-juniper-studio/gatsby-source-holidayextras/issues"
 }

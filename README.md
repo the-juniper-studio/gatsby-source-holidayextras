@@ -2,7 +2,7 @@
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
-  +
+  <span>+<span>
   <a href="https://www.holidayextras.com">
   <img alt="Holiday Extras" src="https://dmy0b9oeprz0f.cloudfront.net/holidayextras.co.uk/brand-guidelines/logo-tags/svg/robot-2.svg" width="60px">
   </a>

@@ -11,6 +11,8 @@
   Gatsby Source Holiday Extras
 </h1>
 
+** This Plugin is Still in Alpha release and is subject to breaking changes until V1 is offificially releases **
+
 ## What does this plugin do?
 
 This plugin queries Information from Holiday Extras Product Library.
@@ -52,26 +54,29 @@ module.exports = {
     {
       resolve: gatsby-source-holidayextras,
       options: {
-        products: [array of HX product codes]
+        hotels: [array of HX hotel codes],
+        lounges: [array of HX lounge codes],
+        parking: [array of HX car park codes],
         key: process.env.HX_API_KEY,
-        token: process.env.HX_API_TOKEN`
+        token: process.env.HX_API_TOKEN
       }
     },
   ]
 }
 ```
 
-Running this in your project will return the following basic values for Parking, and Hotel products only:
+Running this in your project will return the recommended and optional keys listed on the
+[Holiday Extras API Docs](https://docs.holidayextras.co.uk/hxapi/productlibrary/) for Parking, Hotels and Lounges with a few exceptions.
+
+Images are returned as an array of images
+Anything lists on the API docs as 'tripappXYZ' is now just XYZ for simplicity
+
+Extra fields include:
 
 ```
-address
 airport
-latitude
-logo
-longitude
-name
 productCode
-type
+productType
 ```
 
 ## How to Contribute
@@ -80,6 +85,6 @@ Whether you're helping us fix bugs, improve the docs, or spread the word, we'd l
 
 Asking a question or reporting a bug: please feel free to open an [issue](https://github.com/the-juniper-studio/gatsby-source-holidayextras/issues).
 
-Suggesting an improvement: Open an issue explaining your improvement or feature so we can discuss and learn more. Please also check [our roadmap](roadmap) to see what ideas for improvements we already have
+Suggesting an improvement: Open an issue explaining your improvement or feature so we can discuss and learn more. Please also check [our roadmap](ROADMAP.md) to see what ideas for improvements we already have
 
 Submitting code changes: For small fixes, feel free to open a PR with a description of your changes. For large changes, please first open an issue so we can discuss if and how the changes should be implemented.

@@ -35,9 +35,9 @@ Environment variables allow you to safely store sensitive information about your
 .env.development
 .env.production
 
-Then, add the variables on each file to match your HX API information.
-HX_API_KEY
-HX_API_TOKEN
+Then, add the variables on each file to match your Holiday Extras API information.
+HOLIDAY_EXTRAS_API_KEY
+HOLIDAY_EXTRAS_API_TOKEN
 
 ## Configure the plugin
 
@@ -54,11 +54,12 @@ module.exports = {
     {
       resolve: gatsby-source-holidayextras,
       options: {
-        hotels: [array of HX hotel codes],
-        lounges: [array of HX lounge codes],
-        parking: [array of HX car park codes],
-        key: process.env.HX_API_KEY,
-        token: process.env.HX_API_TOKEN
+        fasttrack: [array of Holiday Extras fasttrack codes],
+        hotels: [array of Holiday Extras hotel codes],
+        lounges: [array of Holiday Extras lounge codes],
+        parking: [array of Holiday Extras car park codes],
+        key: process.env.HOLIDAY_EXTRAS_API_KEY,
+        token: process.env.HOLIDAY_EXTRAS_API_TOKEN
       }
     },
   ]

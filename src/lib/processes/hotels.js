@@ -16,7 +16,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     covid_secure: product.covid_secure === 1 ? true : false,
     depart: product.hotel_depart,
     disabled_facilities: product.disabled_facilities,
-    distance_miles: parseInt(product.distance_miles, 10),
+    distance_miles: product.distance_miles,
     facilities: product.hotel_facilities,
     information: product.information,
     introduction: product.tripappintroduction,

@@ -13,7 +13,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     departure_procedures: product.departure_procedures,
     directions: product.directions,
     disabled_facilities: product.disabled_facilities,
-    distance_miles: parseInt(product.distance_miles, 10),
+    distance_miles: product.distance_miles,
     has_electric_charging: product.has_electric_charging === 1 ? true : false,
     information: product.information,
     introduction: product.tripappintroduction,

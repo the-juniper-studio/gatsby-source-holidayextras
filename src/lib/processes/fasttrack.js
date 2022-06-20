@@ -12,7 +12,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     logo: {
       url: cleanImage(product.logo)
     },
-    name: product.tripappaddonname,
+    name: product.tripappaddonname || product.name,
     productCode: product._prodcode,
     productType: product._prodtype,
     // required fields

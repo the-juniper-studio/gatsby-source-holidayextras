@@ -41,11 +41,17 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`
     type HolidayExtrasParking implements Node {
+      distance_miles: String,
       latitude: String,
       longitude: String,
       terminal: String,
       transfer_latest: String,
       introduction: String,
+    },
+    type HolidayExtrasHotels implements Node {
+      distance_miles: String,
+      latitude: String,
+      longitude: String,
     }
   `)
 }

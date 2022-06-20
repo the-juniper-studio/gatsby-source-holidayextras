@@ -16,7 +16,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     covid_secure: product.covid_secure === 1 ? true : false,
     depart: product.hotel_depart,
     disabled_facilities: product.disabled_facilities,
-    distance_miles: product.distance_miles,
+    distance_miles: product.distance_miles?.toString(),
     facilities: product.hotel_facilities,
     information: product.information,
     introduction: product.tripappintroduction,
@@ -26,7 +26,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
       url: cleanImage(product.logo)
     },
     longitude: product.longitude?.toString(),
-    name: product.tripapphotelname,
+    name: product.tripapphotelname || product.name,
     noncancellable_nonrefundable: product.noncancellable_nonrefundable === 1 ? true : false,
     on_airport: product.on_airport === 1 ? true : false,
     productCode: product._prodcode,

@@ -28,7 +28,7 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     menu_drinks: product.menu_drinks,
     menu_extras: product.menu_extras,
     menu_food: product.menu_food,
-    name: product.tripappaddonname,
+    name: product.tripappaddonname || product.name,
     openingtime: product.openingtime,
     productCode: product._prodcode,
     productType: product._prodtype,

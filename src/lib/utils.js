@@ -1,4 +1,4 @@
-const utils = module.exports = {}
+const utils = (module.exports = {})
 
 utils.cleanImage = (image) => {
   const valueToSearch = 'Images'
@@ -6,7 +6,7 @@ utils.cleanImage = (image) => {
 
   let newImageUrl = ''
   if (indexOfSearchedValue > -1) {
-    newImageUrl = 'https://holidayextras.imgix.net/libraryimages' + image.slice(indexOfSearchedValue + valueToSearch.length, image.length)
+    newImageUrl = 'https://holidayextras.imgix.net/libraryimages' + image.slice(indexOfSearchedValue + valueToSearch.length, image.length) + '?auto=compress&format'
   }
   return newImageUrl.trim()
 }

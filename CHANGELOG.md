@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.7
+
+- Add the ability to include archived products in Plugin Options
+
 ## 0.0.4
 
 - Tidy codebase and make things more reusable

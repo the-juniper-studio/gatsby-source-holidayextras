@@ -9,10 +9,9 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     extra_information: product.extra_information,
     images: images,
     is_noncancellable: product.is_noncancellable,
-    logo: {
-      url: cleanImage(product.logo)
-    },
-    name: product.tripappaddonname || product.name,
+    last_update: product._updated_date,
+    logo: cleanImage(product.logo),
+    name: product.tripappaddonname,
     productCode: product._prodcode,
     productType: product._prodtype,
     // required fields

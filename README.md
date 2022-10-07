@@ -54,6 +54,7 @@ module.exports = {
     {
       resolve: gatsby-source-holidayextras,
       options: {
+        archived: false, // Default
         fasttrack: [array of Holiday Extras fasttrack codes],
         hotels: [array of Holiday Extras hotel codes],
         lounges: [array of Holiday Extras lounge codes],
@@ -71,6 +72,9 @@ Running this in your project will return the recommended and optional keys liste
 
 Images are returned as an array of images
 Anything lists on the API docs as 'tripappXYZ' is now just XYZ for simplicity
+
+Archived products can be included in your results by adding `archived: true`
+⚠️ Warning: These products are no longer sold or updated by Holiday Extras
 
 Extra fields include:
 

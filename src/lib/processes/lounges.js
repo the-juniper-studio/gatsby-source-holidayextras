@@ -22,13 +22,12 @@ exports.process = (product, images, createNode, createNodeId, createContentDiges
     important_information: product.important_information,
     infant_age: product.infant_age,
     introduction: product.tripappintroduction,
-    logo: {
-      url: cleanImage(product.logo)
-    },
+    last_update: product._updated_date,
+    logo: cleanImage(product.logo),
     menu_drinks: product.menu_drinks,
     menu_extras: product.menu_extras,
     menu_food: product.menu_food,
-    name: product.tripappaddonname || product.name,
+    name: product.tripappaddonname,
     openingtime: product.openingtime,
     productCode: product._prodcode,
     productType: product._prodtype,

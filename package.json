@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-holidayextras",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Fetch product information from Holiday Extras Product Library API",
   "main": "index.js",
   "scripts": {

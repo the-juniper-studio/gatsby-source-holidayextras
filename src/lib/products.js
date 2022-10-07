@@ -16,7 +16,7 @@ products.get = (productsFoo, type, pluginOptions, createNode, createNodeId, crea
 products.getItems = (product, pluginOptions) => {
   if (!product) return
   return fetch(
-    `https://api.holidayextras.co.uk/v1/product/${product}/lite.js?token=${pluginOptions.token}&key=${pluginOptions.key}${pluginOptions.archived === true && `&archived=1`}${
+    `https://api.holidayextras.co.uk/v1/product/${product}/lite.js?token=${pluginOptions.token}&key=${pluginOptions.key}${pluginOptions.archived && `&archived=1`}${
       pluginOptions.fields && `&fields=${pluginOptions.fields}`
     }`
   )

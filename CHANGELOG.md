@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.8
+
+- Bug Fixes
+- Sellpoint1 on hotels now Sellpoint
+
 ## 0.0.7
 
 - Add the ability to include archived products in Plugin Options

@@ -74,7 +74,7 @@ Images are returned as an array of images
 Anything lists on the API docs as 'tripappXYZ' is now just XYZ for simplicity
 
 Archived products can be included in your results by adding `archived: true`
-⚠️ Warning: These products are no longer sold or updated by Holiday Extras
+:warning: These products are no longer sold or updated by Holiday Extras
 
 Extra fields include:
 

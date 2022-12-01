@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "gatsby-source-filesystem": "^4.13.0",
-    "node-fetch": "^2.6.5"
+    "node-fetch": "^3.3.0"
   },
   "devDependencies": {
     "prettier": "^2.6.2"
